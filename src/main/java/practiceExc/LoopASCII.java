@@ -19,7 +19,9 @@ public class LoopASCII {
 			 * method 2 did not work char asciivalue = (char)i;
 			 * System.out.println("Ascii of "+i+" is " +asciivalue);
 			 */
-
+             
+			System.out.println("Ascii of " +(char)i + " is " + i);
+			
 		}
 	}
 }
