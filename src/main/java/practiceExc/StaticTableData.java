@@ -155,10 +155,19 @@ public class StaticTableData {
 	  Assert.assertEquals(optionPage, "Choose Price Option");
 	  
 	  
+	  // Reading data from table.
+	  //Silver price from table
+	  String silverprice=driver.findElement(By.xpath("//table[@id='priceTable']//tbody/tr[1]/td[2]")).getText();
+	  System.out.println("Silver Price is :"+ silverprice);
 	  
+	  //Gold Online claim status
+	  String onlineStatus = driver.findElement(By.xpath("//table[@id='priceTable']//tbody/tr[2]/td[3]")).getText();
+	  System.out.println("Has onlilne claim been submitted for Gold: " +onlineStatus);
 	  
-	  
-	  
+	  //Click ultimate
+	  driver.findElement(By.xpath("//tfoot//th[2]/label[4]")).click();
+	
+		
 	}
 
 }
