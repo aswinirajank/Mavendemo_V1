@@ -93,20 +93,74 @@ public class SeleniumExercise4 {
 		String option10 = driver.findElement(By.xpath("//a/span[text()='qdPM Extended']")).getText();
 		Assert.assertEquals(option10, "qdPM Extended");
 
-		//Add Task
+		// Add Task
 		AddTaskButton();
-		
+
 	}
 
 	public void AddTaskButton() {
 		// Add Task Button
 		driver.findElement(By.xpath("//tbody/tr/td/button[text()='Add Task']")).click();
 
-		// DD
+		// Project DD
 		WebElement projectDD = driver.findElement(By.id("form_projects_id"));
 		Select project = new Select(projectDD);
 		project.selectByValue("1");
 
+		// Call General Tab
+		GeneralTab();
+
 	}
 
+	public void GeneralTab() {
+		
+		
+		// Type DD
+
+		// WebElement typeDD= driver.findElement(By.xpath("//label[text()='Type']"));
+		WebElement typeDD = driver.findElement(By.id("tasks_tasks_type_id"));
+		Select hourlyrate = new Select(typeDD);
+		hourlyrate.selectByValue("2");
+
+		driver.findElement(By.id("tasks_name")).sendKeys("abcdtest");
+
+		// Status DD
+		WebElement statusDD = driver.findElement(By.id("tasks_tasks_status_id"));
+		Select completedstatus = new Select(statusDD);
+		completedstatus.selectByValue("5");
+
+		// DD
+		WebElement priorityDD = driver.findElement(By.id("tasks_tasks_priority_id"));
+		Select priority = new Select(priorityDD);
+		priority.selectByValue("3");
+
+		// Label DD
+		WebElement labelDD = driver.findElement(By.id("tasks_tasks_label_id"));
+		Select label = new Select(labelDD);
+		label.selectByValue("6");
+
+		//Select all Checkbox
+		driver.findElement(By.id("tasks_assigned_to_1")).click();
+		
+		//Description text
+		// WebElement desc= driver.findElement(By.xpath("//html[@dir='ltr']/body/p/br")).click();
+		//WebElement desc = driver.findElement(By.xpath("//body[@contenteditable='true']/p/br/")).sendKeys("abcd");
+		
+		//desc.sendKeys("abcddesc");
+			
+		//Created By DD
+				
+		WebElement createdDD = driver.findElement(By.id("tasks_tasks_type_id"));
+		Select author = new Select(createdDD);
+		author.selectByValue("3");
+		
+		
+		//click on time
+		//driver.findElement(By.xpath("//div[@class='form-body']/ul/li[2]")).click();
+	     
+		//Save
+		
+		driver.findElement(By.xpath("//button[text()='Save']")).click();
+		
+	}
 }
